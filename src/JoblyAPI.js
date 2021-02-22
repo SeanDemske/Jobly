@@ -33,6 +33,12 @@ class JoblyApi {
   }
 
   // Individual API routes
+  /** Get details on all companies */
+
+  static async getCompanies(filter) {
+    let res = await this.request(filter ? `companies/?name=${filter}` : `companies`);
+    return res.companies;
+  }
 
   /** Get details on a company by handle. */
 
@@ -41,7 +47,13 @@ class JoblyApi {
     return res.company;
   }
 
-  // obviously, you'll add a lot here ...
+  /** Get details on all jobs */
+
+  static async getJobs(filter) {
+    let res = await this.request(filter ? `jobs/?title=${filter}` : `jobs`);
+    return res.jobs;
+  }
+
 }
 
 // for now, put token ("testuser" / "password" on class)

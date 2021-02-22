@@ -5,7 +5,7 @@ import LoginForm from "./Components/LoginForm/LoginForm";
 import SignupForm from "./Components/SignupForm/SignupForm";
 import Companies from "./Components/Companies/Companies";
 import Jobs from "./Components/Jobs/Jobs";
-import Profile from "./Components/ProfileForm/ProfileForm";
+import CompaniesJobs from "./Components/CompaniesJobs/CompaniesJobs";
 import ProfileForm from "./Components/ProfileForm/ProfileForm";
 
 function Routes() {
@@ -15,7 +15,7 @@ function Routes() {
       <Route exact path="/signup"><SignupForm /></Route>
       <Route exact path="/login"><LoginForm /></Route>
       <Route exact path="/jobs"><Jobs /></Route>
-      <Route exact path="/companies/:id"><div>Company Detail</div></Route>
+      <Route exact path="/companies/:companyId"><CompaniesJobs /></Route>
       <Route exact path="/companies"><Companies /></Route>
       <Route exact path="/"><Home/></Route>
       <Route><div>Not Found</div></Route>

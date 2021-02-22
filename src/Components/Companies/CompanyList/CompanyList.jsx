@@ -1,8 +1,21 @@
 import React from "react";
+import CompanyDetail from "./CompanyDetail/CompanyDetail"
 
-const CompanyList = () => {
+const CompanyList = ({ companies }) => {
+    const renderCompanies = () => {
+        return (
+            companies.map(company => <CompanyDetail company={company} key={company.handle} />)
+        );
+    }
+
+    const renderNotFound = () => {
+        return (
+            <p>No results found.</p>
+        );
+    }
+
     return (
-        <div>CompanyList</div>
+        companies.length > 0 ? renderCompanies() : renderNotFound()
     );
 }
 
