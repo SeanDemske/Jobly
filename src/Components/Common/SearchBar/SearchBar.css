@@ -1,0 +1,21 @@
+.SearchBar {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    margin: 1rem 0;
+}
+
+.SearchBar button {
+    display: inline-block;
+    height: 100%;
+    font-size: 1.25rem;
+    flex-grow: 1;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.SearchBar input {
+    height: 100%;
+    flex-grow: 15;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,11 @@
+.HomeNavbar {
+    background-color: white;
+    padding: 1rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(184, 184, 184);
+}
+
+.HomeNavbar .nav-right a {
+    margin: 0rem 1rem;
+}

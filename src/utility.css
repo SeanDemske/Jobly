@@ -1,0 +1,154 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ////////////// */
+/* Font-Sizes */
+/* ////////////// */
+.r-1 { font-size: 1rem; }
+.r-1_25 { font-size: 1.25rem; }
+.r-1_50 { font-size: 1.5rem; }
+.r-1_75 { font-size: 1.75rem; }
+.r-2 { font-size: 2rem; }
+
+/* ////////////// */
+/* Font-Weights */
+/* ////////////// */
+.w-400 { font-weight: 400; }
+.w-500 { font-weight: 500; }
+.w-600 { font-weight: 600; }
+.w-700 { font-weight: 700; }
+.w-800 { font-weight: 800; }
+
+/* ////////////// */
+/* Navbar */
+/* ////////////// */
+.nav-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    filter: brightness(50%);
+}
+
+.nav-link:focus {
+    text-decoration: underline;
+}
+
+.nav-link:active {
+    color: black;
+}
+
+
+/* ////////////// */
+/* Buttons */
+/* ////////////// */
+.btn-group {
+    margin: 1.25rem 0;
+}
+
+
+.btn-group a,
+.btn-group button {
+    margin: 0rem .5rem;
+}
+
+.btn {
+    border: 2px solid rgba(119, 0, 255, 0);
+    text-decoration: none;
+    background-color: grey;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    filter:brightness(110%);
+}
+
+.btn:focus {
+    border: 2px solid rgb(224, 224, 224);
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-apply {
+    background-color: #eb5045;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+/* ////////////// */
+/* Inputs */
+/* ////////////// */
+input {
+    width: 400px;
+    height: 2rem;
+    border-radius: 5px;
+    border: 1px solid rgb(95, 95, 95);
+    font-size: 1.25rem;
+    padding: .5rem;
+}
+
+input:focus {
+    border: 1px solid #007bff;
+}
+
+/* ////////////// */
+/* Forms */
+/* ////////////// */
+.form-container {
+    margin: auto;
+    width: max-content;
+}
+
+.form-container form {
+    background-color: white;
+    border: 2px solid rgb(219, 219, 219);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.form-container label {
+    font-weight: 700;
+}
+
+.form-container form > *{
+    margin: .5rem 0;
+}
+
+.form-container .container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+/* ////////////// */
+/* List Container */
+/* ////////////// */
+.list-container {
+    margin: 2rem 25rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .list-container {
+        margin: 2rem 5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .list-container {
+        margin: 2rem .5rem;
+    }
+}
