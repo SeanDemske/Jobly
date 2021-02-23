@@ -9,3 +9,32 @@
 .HomeNavbar .nav-right a {
     margin: 0rem 1rem;
 }
+
+@media screen and (max-width: 1200px) {
+    .HomeNavbar {
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .HomeNavbar {
+        padding: 1rem 1rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .HomeNavbar {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .HomeNavbar .nav-right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .HomeNavbar .nav-right a {
+        margin: 0rem 0rem;
+    }
+}
+

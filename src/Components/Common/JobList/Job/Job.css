@@ -11,3 +11,13 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.Job button:disabled {
+    background-color: grey;
+    cursor: default
+}
+
+.Job button:disabled:hover {
+    background-color: grey;
+    filter: brightness(100%);
+}

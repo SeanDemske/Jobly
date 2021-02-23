@@ -19,3 +19,13 @@
     border-radius: 5px 0px 0px 5px;
     font-size: 1.5rem;
 }
+
+@media screen and (max-width: 450px) {
+    .SearchBar input {
+        width: 100px;
+    }
+
+    .SearchBar button {
+        width: 100px;
+    }
+}

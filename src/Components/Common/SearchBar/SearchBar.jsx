@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = ({ submit }) => {
+const SearchBar = ({ submit, placeholder }) => {
     const [inputValue, setInputValue] = useState("")
 
     const handleChange = (e) => {
@@ -15,7 +15,7 @@ const SearchBar = ({ submit }) => {
 
     return (
         <form className="SearchBar" onSubmit={handleSubmit} >
-            <input type="text" value={inputValue} onChange={handleChange} />
+            <input type="text" value={inputValue} onChange={handleChange} placeholder={placeholder} />
             <button className="btn btn-primary">Submit</button>
         </form>
     );

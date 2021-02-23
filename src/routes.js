@@ -8,17 +8,17 @@ import Jobs from "./Components/Jobs/Jobs";
 import CompaniesJobs from "./Components/CompaniesJobs/CompaniesJobs";
 import ProfileForm from "./Components/ProfileForm/ProfileForm";
 
-function Routes() {
+function Routes({ signup, login }) {
   return (
     <Switch>
       <Route exact path="/profile"><ProfileForm /></Route>
-      <Route exact path="/signup"><SignupForm /></Route>
-      <Route exact path="/login"><LoginForm /></Route>
+      <Route exact path="/signup"><SignupForm signup={signup} /></Route>
+      <Route exact path="/login"><LoginForm login={login} /></Route>
       <Route exact path="/jobs"><Jobs /></Route>
       <Route exact path="/companies/:companyId"><CompaniesJobs /></Route>
       <Route exact path="/companies"><Companies /></Route>
       <Route exact path="/"><Home/></Route>
-      <Route><div>Not Found</div></Route>
+      <Route><div className="list-container">Not Found</div></Route>
     </Switch>
   );
 }

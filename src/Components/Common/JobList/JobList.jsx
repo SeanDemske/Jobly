@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Job from "./Job/Job"
+import useClientUserAuth from "../../../Utils/useClientUserAuth";
+import UserContext from "../../../Context/UserContext";
 
 const JobList = ({ jobs }) => {
+    const { currentUser } = useContext(UserContext);
+    useClientUserAuth(currentUser);
 
     const renderJobs = () => {
         return (

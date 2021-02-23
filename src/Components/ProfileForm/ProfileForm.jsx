@@ -1,37 +1,71 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import UserContext from "../../Context/UserContext";
+import useClientUserAuth from "../../Utils/useClientUserAuth";
+import JoblyAPI from "../../JoblyAPI";
 import "./ProfileForm.css";
 
 const ProfileForm = () => {
+    const { currentUser, setCurrentUser } = useContext(UserContext);
+    useClientUserAuth(currentUser);
+
+    const INITIAL_STATE = {
+        firstName: currentUser.firstName,
+        lastName: currentUser.lastName,
+        email: currentUser.email,
+        password: ""
+    }
+    const [formData, setFormData] = useState(INITIAL_STATE);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        let updatedUser = currentUser;
+        try {
+            updatedUser = await JoblyAPI.updateUser(formData, currentUser.username);
+        } catch(err) {
+            return;
+        }
+        setCurrentUser(updatedUser);
+    }
+
     return (
         <div className="ProfileForm">
             <div className="form-container">
                 <h1>Profile</h1>
-                <form action="">
+                <form onSubmit={handleSubmit}>
                     <label htmlFor="">Username</label>
-                    <p>SMasters</p>
+                    <p>{ currentUser.username }</p>
 
                     <div className="input-group">
-                        <label htmlFor="firstname">First Name</label>
+                        <label htmlFor="firstName">First Name</label>
                             <br/>
-                        <input name="firstname" id="firstname" type="text"/>
+                        <input name="firstName" id="firstName" type="text" value={formData.firstName} onChange={handleChange} />
                     </div>
 
                     <div className="input-group">
-                        <label htmlFor="lastname">Last Name</label>
+                        <label htmlFor="lastName">Last Name</label>
                             <br/>
-                        <input name="lastname" id="lastname" type="text"/>
+                        <input name="lastName" id="lastName" type="text" value={formData.lastName} onChange={handleChange} />
                     </div>
 
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
                             <br/>
-                        <input name="email" id="email" type="email"/>
+                        <input name="email" id="email" type="email" value={formData.email} onChange={handleChange} />
                     </div>
 
                     <div className="input-group">
-                        <label htmlFor="confirmpassword">Confirm password</label>
+                        <label htmlFor="password">Confirm password</label>
                             <br/>
-                        <input name="confirmpassword" id="confirmpassword" type="password"/>
+                        <input name="password" id="password" type="password" value={formData.password} onChange={handleChange} />
                     </div>
 
                     <div className="container">

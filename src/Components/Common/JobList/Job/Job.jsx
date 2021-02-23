@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import UserContext from "../../../../Context/UserContext";
 import "./Job.css";
 
 const Job = ({job}) => {
+
+    const { hasAppliedToJob, applyToJob } = useContext(UserContext);
+    const [applied, setApplied] = useState();
+  
+    React.useEffect(function updateAppliedStatus() {
+      setApplied(hasAppliedToJob(job.id));
+    }, [job.id, hasAppliedToJob]);
+  
+    /** Apply for a job */
+    async function handleApply(evt) {
+      if (hasAppliedToJob(job.id)) return;
+      applyToJob(job.id);
+      setApplied(true);
+    }
+
     return (
         <div className="Job">
             <div className="left-side">
@@ -11,7 +27,13 @@ const Job = ({job}) => {
                 <p>Equity: { job.equity }</p>
             </div>
             <div className="right-side">
-                <button className="btn btn-apply w-700">Apply</button>
+                <button 
+                    onClick={handleApply} 
+                    className="btn btn-apply w-700"
+                    disabled={applied}
+                    >
+                    {applied ? "Applied" : "Apply"}
+                </button>
             </div>
         </div>
     );

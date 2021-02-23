@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import JoblyAPI from "../../JoblyAPI";
 import JobList from "../Common/JobList/JobList"
+import "./CompaniesJobs.css";
 
 const CompaniesJobs = () => {
     const { companyId } = useParams();
